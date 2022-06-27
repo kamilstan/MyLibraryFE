@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+}
+
+.menu {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background-color: #36B5D9;
+    color: white;
+}
+.logo {
+    order: 0;
+    flex-grow: 1;
+    list-style: none;
+    font-weight: bold;
+    margin: 10px;
+
+}
+.item {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+    margin: 10px;
+}
+
+.item a {
+    text-decoration: none;
+    color: white;
+}

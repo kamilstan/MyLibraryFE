@@ -1,0 +1,23 @@
+.books {
+    height: 85vh;
+    background-color: seagreen;
+    padding: 30px;
+}
+
+.booksList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+;
+}
+
+.singleBook {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 60vw;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 2px;
+}
