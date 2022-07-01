@@ -1,42 +1,39 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useState} from "react";
+import {SearchContext} from "../../contexts/search.context";
+import {BookEntity} from "types"
 
 import "./BooksList.css"
-import {SearchContext} from "../../contexts/search.context";
+import {Book} from "../Book/Book";
 
 export const BooksList = () => {
 
     const {search} = useContext(SearchContext);
+    const [books, setBooks] = useState<BookEntity[]>([]);
+    console.log(books)
 
     useEffect(() => {
-        console.log('making request to the database for', search)
+        (async () => {
+            const res = await fetch(`http://localhost:3001/book/search/${search}`)
+            const data = await res.json();
+            setBooks(data);
+            console.log(data)
+        })();
+
     }, [search]);
 
     return (
         <main className="books">
-            <h1>{search}</h1>
+
             <ul className="booksList">
 
-                <li className="singleBook">
-                    <p><b>Title:</b> <span>Potop</span></p>
-                    <p><b>Author:</b> <span>H. Sienkiewicz</span></p>
-                    <p><b>Description:</b> <span>Supe książka o polakach</span></p>
-                    <p><b>Opinie:</b> <span>4.1</span></p>
-                    <button>Take</button>
-                </li>
-                <li className="singleBook">
-                    <p><b>Title:</b> <span>Potop</span></p>
-                    <p><b>Author:</b> <span>H. Sienkiewicz</span></p>
-                    <p><b>Description:</b> <span>Supe książka o polakach</span></p>
-                    <p><b>Opinie:</b> <span>4.1</span></p>
-                    <button>Take</button>
-                </li>
-                <li className="singleBook">
-                    <p><b>Title:</b> <span>Potop</span></p>
-                    <p><b>Author:</b> <span>H. Sienkiewicz</span></p>
-                    <p><b>Description:</b> <span>Supe książka o polakach</span></p>
-                    <p><b>Opinie:</b> <span>4.1</span></p>
-                    <button>Take</button>
-                </li>
+                {
+                    books.map(book => (
+                        <Book key={book.id} id ={book.id}/>
+
+                    ))
+
+                }
+
             </ul>
         </main>
 
