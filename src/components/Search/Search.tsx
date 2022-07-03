@@ -18,6 +18,7 @@ export const Search = () => {
         <form className="search" onSubmit={setSearchingResult} >
             <input placeholder="Search for books.." value={inputValue} onChange={e => setInputValue(e.target.value)} type="text"/>
             <Button text="Find"/>
+            <Button text="Add" to="/add"/>
         </form>
     )
 }

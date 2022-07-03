@@ -25,7 +25,7 @@ export const Book =(props: Props)=> {
             <p><b>Author:</b> <span>{book.author}</span></p>
             <p><b>Description:</b> <span>{book.description}</span></p>
             <p><b>Review:</b> <span>{book.review}</span></p>
-            <button>Take</button>
+            <button className="button">Take</button>
         </li>
     )
 }
