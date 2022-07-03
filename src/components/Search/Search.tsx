@@ -1,8 +1,8 @@
 import React, {SyntheticEvent, useContext, useState} from "react";
 import {Button} from "../common/Button";
+import {SearchContext} from "../../contexts/search.context";
 
 import "./Search.css"
-import {SearchContext} from "../../contexts/search.context";
 
 export const Search = () => {
 
@@ -18,7 +18,7 @@ export const Search = () => {
         <form className="search" onSubmit={setSearchingResult} >
             <input placeholder="Search for books.." value={inputValue} onChange={e => setInputValue(e.target.value)} type="text"/>
             <Button text="Find"/>
-            <Button text="Add" to="/add"/>
+            <Button text="Add" to="/addBook"/>
         </form>
     )
 }

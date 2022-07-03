@@ -1,5 +1,5 @@
 .books {
-    height: 85vh;
+    min-height: 85vh;
     background-color: seagreen;
     padding: 30px;
 }

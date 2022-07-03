@@ -16,7 +16,7 @@ export const App = () => {
             <Header/>
             <Routes>
                 <Route path="/" element={<BooksList/>} />
-                <Route path="/addBook" element={<AddBookForm/>}/>
+                <Route path="/addBook" element={<AddBookForm />}/>
 
             </Routes>
         </SearchContext.Provider>
