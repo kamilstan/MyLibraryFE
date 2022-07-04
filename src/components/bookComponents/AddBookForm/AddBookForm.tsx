@@ -1,7 +1,7 @@
 import React, {SyntheticEvent, useState} from "react";
 
 import "./AddBookForm.css"
-import {Button} from "../common/Button";
+import {Button} from "../../common/Button";
 import {Link} from "react-router-dom";
 
 export const AddBookForm = () => {
@@ -54,7 +54,7 @@ export const AddBookForm = () => {
             <main className="added-book">
                 <p className="book-added-p">The book "{form.title}" has been added by ID "{id}"</p>
                 <Link to="/" className="go-to-main">
-                    <Button text="Go back main page"/>
+                    <Button text="Go back to main page"/>
                     </Link>
             </main>
         )

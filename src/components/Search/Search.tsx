@@ -4,6 +4,7 @@ import {SearchContext} from "../../contexts/search.context";
 
 import "./Search.css"
 
+
 export const Search = () => {
 
     const {search, setSearch} = useContext(SearchContext)
@@ -16,9 +17,10 @@ export const Search = () => {
 
     return(
         <form className="search" onSubmit={setSearchingResult} >
-            <input placeholder="Search for books.." value={inputValue} onChange={e => setInputValue(e.target.value)} type="text"/>
+            <input placeholder="Start searching..." value={inputValue} onChange={e => setInputValue(e.target.value)} type="text"/>
             <Button text="Find"/>
-            <Button text="Add" to="/addBook"/>
+            <Button text="Add book" to="/addBook"/>
+            <Button text="Add user" to="/admin/addUser"/>
         </form>
     )
 }
