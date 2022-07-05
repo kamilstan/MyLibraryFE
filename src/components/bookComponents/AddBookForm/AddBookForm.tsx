@@ -1,14 +1,16 @@
 import React, {SyntheticEvent, useState} from "react";
 
 import "./AddBookForm.css"
-import {Button} from "../../common/Button";
+import {Button} from "../../common/Button/Button";
 import {Link} from "react-router-dom";
+import { NewBookEntity } from "types";
+import {Spinner} from "../../common/Spinner/Spinner";
 
 export const AddBookForm = () => {
 
     const [loading, setLoading] = useState(false);
     const [id, setId] = useState("");
-    const [form, setForm] = useState({
+    const [form, setForm] = useState<NewBookEntity>({
         title: '',
         author: '',
         description: '',
@@ -46,7 +48,7 @@ export const AddBookForm = () => {
     }
 
     if (loading) {
-        return <h2>Loading..</h2>
+        return <Spinner/>
     }
 
     if (id) {
@@ -63,7 +65,10 @@ export const AddBookForm = () => {
 
     return (
         <main className="add-book">
+
+            <Link to="/"><Button text="Go back to main page"/></Link>
             <h2>Add new book</h2>
+
             <form className="add-book-form" onSubmit={saveBook}>
                 <p>
                     <label>

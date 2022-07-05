@@ -1,13 +1,15 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Link} from "react-router-dom";
-import {Button} from "../../common/Button";
+import { NewUserEntity } from 'types';
+import {Button} from "../../common/Button/Button";
+import {Spinner} from "../../common/Spinner/Spinner";
 
 import "./AddUserForm.css"
 
 export const AddUserForm = () => {
     const [loading, setLoading] = useState(false);
     const [id, setId] = useState("");
-    const [form, setForm] = useState({
+    const [form, setForm] = useState<NewUserEntity>({
         firstname: '',
         lastname: '',
         address: '',
@@ -45,14 +47,14 @@ export const AddUserForm = () => {
     }
 
     if (loading) {
-        return <h2>Loading..</h2>
+        return <Spinner/>
     }
 
     if (id) {
         return (
             <main className="added-user">
                 <p className="user-added-p">The user "{form.firstname} {form.lastname}" has been added by ID "{id}"</p>
-                <Link to="/" className="go-to-main">
+                <Link to="/admin" className="go-to-main">
                     <Button text="Go back to main page"/>
                 </Link>
             </main>
@@ -62,7 +64,10 @@ export const AddUserForm = () => {
 
     return (
         <main className="add-user">
+
+            <Link to="/admin"><Button text="Go back to main page"/></Link>
             <h2>Add new user</h2>
+
             <form className="add-user-form" onSubmit={saveUser}>
                 <p>
                     <label>

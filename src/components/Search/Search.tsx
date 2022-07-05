@@ -1,5 +1,5 @@
 import React, {SyntheticEvent, useContext, useState} from "react";
-import {Button} from "../common/Button";
+import {Button} from "../common/Button/Button";
 import {SearchContext} from "../../contexts/search.context";
 
 import "./Search.css"

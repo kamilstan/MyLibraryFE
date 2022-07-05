@@ -1,11 +1,11 @@
 .add-user {
-    min-height: 85vh;
+    min-height: 100vh;
     background-color: seagreen;
     padding: 10px 0;
 }
 
 .added-user {
-    min-height: 85vh;
+    min-height: 100vh;
     background-color: seagreen;
     padding: 10px 0;
     text-align: center;

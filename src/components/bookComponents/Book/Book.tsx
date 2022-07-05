@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {SyntheticEvent, useContext, useEffect, useState} from "react";
 import { BookEntity } from "types";
 
 interface Props {
@@ -18,7 +18,13 @@ export const Book =(props: Props)=> {
         })()
     }, [book])
 
-    const deleteBook = async () => {
+    const deleteBook = async (e:SyntheticEvent) => {
+        e.preventDefault();
+
+        if(!window.confirm(`Are you sure you want to remove the book with ID: ${props.id}?`)) {
+            return;
+        };
+
         await fetch(`http://localhost:3001/book/${props.id}`, {
             method: "DELETE",
         });

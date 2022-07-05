@@ -1,6 +1,7 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {SyntheticEvent, useContext, useEffect, useState} from "react";
 import { UserEntity } from "types";
 import {Link} from "react-router-dom";
+import {Spinner} from "../../common/Spinner/Spinner";
 
 interface Props {
     id: string;
@@ -13,12 +14,17 @@ export const User = (props: Props) => {
     useEffect(() => {
         (async () => {
             const res = await fetch(`http://localhost:3001/user/${props.id}`);
-            const data = await res.json();
-            setUser(data);
-        })()
+                const data = await res.json();
+                setUser(data);
+            }
+        )()
     }, [user])
 
-    const deleteUser = async () => {
+    const deleteUser = async (e:SyntheticEvent) => {
+        e.preventDefault();
+        if(!window.confirm(`Are you sure you want to remove the user with ID: ${props.id}?`)) {
+            return;
+        };
         await fetch(`http://localhost:3001/user/${props.id}`, {
             method: "DELETE",
         });

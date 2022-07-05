@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 
-import {Header} from "./components/layout/Header";
-import {BooksList} from "./components/bookComponents/BooksList/BooksList";
-import {UserList} from "./components/userComponents/UserList/UserList";
 import { SearchContext} from './contexts/search.context';
 import {Route, Routes} from "react-router-dom";
-import {AddBookForm} from "./components/bookComponents/AddBookForm/AddBookForm";
-import {AddUserForm} from "./components/userComponents/AddUserForm/AddUserForm";
+
+import {BooksView} from "./views/BooksView";
+import {UsersView} from "./views/UsersView";
+import {AddBookView} from "./views/AddBookView";
+import {AddUserView} from "./views/AddUserView";
+import {NotFoundView} from "./views/NotFoundView";
 
 
 export const App = () => {
@@ -15,17 +16,14 @@ export const App = () => {
 
     return (
         <SearchContext.Provider value={{search, setSearch}}>
-            <Header/>
             <Routes>
-                <Route path="/" element={<BooksList/>} />
-                <Route path="/addBook" element={<AddBookForm />}/>
-                <Route path="/admin" element={<UserList/>} />
-                <Route path="/admin/addUser" element={<AddUserForm />}/>
+                <Route path="/" element={<BooksView/>} />
+                <Route path="/addBook" element={<AddBookView/>}/>
+                <Route path="/admin" element={<UsersView/>}/>
+                <Route path="/admin/addUser" element={<AddUserView/>}/>
                 {/*<Route path="/admin/:userId" element={<User/>}/>*/}
-
+                <Route path="*" element={<NotFoundView/>}/>
             </Routes>
-
         </SearchContext.Provider>
-
     );
 }
