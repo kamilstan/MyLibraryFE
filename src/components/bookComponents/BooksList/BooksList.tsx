@@ -4,20 +4,17 @@ import {BookEntity} from "types"
 
 import "./BooksList.css"
 import {Book} from "../Book/Book";
-import {Header} from "../../layout/Header";
 
 export const BooksList = () => {
 
     const {search} = useContext(SearchContext);
     const [books, setBooks] = useState<BookEntity[]>([]);
-    console.log(books)
 
     useEffect(() => {
         (async () => {
             const res = await fetch(`http://localhost:3001/book/search/${search}`)
             const data = await res.json();
             setBooks(data);
-            console.log(data)
         })();
 
     }, [search]);
@@ -25,15 +22,11 @@ export const BooksList = () => {
     return (
 
             <main className="books">
-
                 <ul className="booksList">
-
                     {
                         books.map(book => (
                             <Book key={book.id} id ={book.id}/>
-
                         ))
-
                     }
 
                 </ul>
