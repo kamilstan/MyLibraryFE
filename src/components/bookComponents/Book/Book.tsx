@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { BookEntity } from "types";
 
 interface Props {
@@ -7,7 +7,8 @@ interface Props {
 
 export const Book =(props: Props)=> {
 
-    const [book, setBook] = useState<BookEntity | null>(null)
+    const [book, setBook] = useState<BookEntity | null>(null);
+
     useEffect(() => {
         (async () => {
             const res = await fetch(`http://localhost:3001/book/${props.id}`);
@@ -15,10 +16,18 @@ export const Book =(props: Props)=> {
             setBook(data);
 
         })()
-    })
-    if(book === null) {
-        return <p>Loading...</p>
+    }, [book])
+
+    const deleteBook = async () => {
+        await fetch(`http://localhost:3001/book/${props.id}`, {
+            method: "DELETE",
+        });
     }
+
+    if(book === null) {
+        return null
+    }
+
     return (
         <li  className="singleBook">
             <p><b>Title:</b> <span>{book.title}</span></p>
@@ -26,6 +35,7 @@ export const Book =(props: Props)=> {
             <p><b>Description:</b> <span>{book.description}</span></p>
             <p><b>Review:</b> <span>{book.review}</span></p>
             <button className="button">Take</button>
+            <button className="button" onClick={deleteBook}>Delete</button>
         </li>
     )
 }
