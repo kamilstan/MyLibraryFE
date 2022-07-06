@@ -1,0 +1,17 @@
+.singleBook {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    width: 40vw;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 2px;
+}
+.singleBook p {
+    margin: 0 10px;
+}
+
+.singleBook h3 {
+    flex-grow: 1;
+}

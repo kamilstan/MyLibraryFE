@@ -1,13 +1,15 @@
 import React, {useContext, useEffect, useState} from "react";
 import {SearchContext} from "../../../contexts/search.context";
 import {BookEntity} from "types"
+import {Book} from "../Book/Book";
 
 import "./BooksList.css"
-import {Book} from "../Book/Book";
+
 
 export const BooksList = () => {
 
     const {search} = useContext(SearchContext);
+
     const [books, setBooks] = useState<BookEntity[]>([]);
 
     useEffect(() => {
@@ -24,11 +26,10 @@ export const BooksList = () => {
             <main className="books">
                 <ul className="booksList">
                     {
-                        books.map(book => (
-                            <Book key={book.id} id ={book.id}/>
+                        books.map((book, index) => (
+                             <Book key={book.id} id={book.id} index={index + 1}/>
                         ))
                     }
-
                 </ul>
             </main>
 

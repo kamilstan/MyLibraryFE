@@ -15,19 +15,17 @@ export const UserList = () => {
             const res = await fetch(`http://localhost:3001/user/search/${search}`)
             const data = await res.json();
             setUsers(data);
-            console.log(data)
         })();
 
     }, [search]);
-
-
 
     return (
             <main className="users">
                 <ul className="usersList">
                     {
-                        users.map(user => (
-                            <User key={user.id} id={user.id}/>
+                        users.map((user,index) => (
+
+                            <User key={user.id} id={user.id} index={index +1} />
 
                         ))
                     }

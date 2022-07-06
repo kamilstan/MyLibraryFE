@@ -1,10 +1,12 @@
 import React, {SyntheticEvent, useContext, useEffect, useState} from "react";
 import { UserEntity } from "types";
-import {Link} from "react-router-dom";
-import {Spinner} from "../../common/Spinner/Spinner";
+import {Link, useParams} from "react-router-dom";
+
+import "./User.css"
 
 interface Props {
     id: string;
+    index: number;
 }
 
 export const User = (props: Props) => {
@@ -14,10 +16,10 @@ export const User = (props: Props) => {
     useEffect(() => {
         (async () => {
             const res = await fetch(`http://localhost:3001/user/${props.id}`);
-                const data = await res.json();
-                setUser(data);
-            }
-        )()
+            const data = await res.json();
+            setUser(data);
+
+        })()
     }, [user])
 
     const deleteUser = async (e:SyntheticEvent) => {
@@ -35,13 +37,10 @@ export const User = (props: Props) => {
     }
 
     return (
-        <li  className="singleUser">
-            <p><b>Firstname:</b> <span>{user.firstname}</span></p>
-            <p><b>Lastname:</b> <span>{user.lastname}</span></p>
-            <p><b>Address:</b> <span>{user.address}</span></p>
-            <p><b>Password:</b> <span>{user.password}</span></p>
+        <li  className="single-user">
+            <h3 className="single-user-name"><span>{props.index}. {user.firstname} {user.lastname}</span></h3>
             <button className="button" onClick={deleteUser}>Delete</button>
-            <Link className="button" to={`/admin/${user.id}`}>See more..</Link>
+            <Link className="button" to={`/admin/${props.id}`}>See more..</Link>
 
         </li>
     )

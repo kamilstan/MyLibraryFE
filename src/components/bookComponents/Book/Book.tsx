@@ -1,8 +1,12 @@
-import React, {SyntheticEvent, useContext, useEffect, useState} from "react";
+import React, {SyntheticEvent, useEffect, useState} from "react";
 import { BookEntity } from "types";
+import {Link} from "react-router-dom";
+
+import "./Book.css"
 
 interface Props {
     id: string;
+    index: number;
 }
 
 export const Book =(props: Props)=> {
@@ -36,12 +40,11 @@ export const Book =(props: Props)=> {
 
     return (
         <li  className="singleBook">
-            <p><b>Title:</b> <span>{book.title}</span></p>
-            <p><b>Author:</b> <span>{book.author}</span></p>
-            <p><b>Description:</b> <span>{book.description}</span></p>
-            <p><b>Review:</b> <span>{book.review}</span></p>
-            <button className="button">Take</button>
+            <h3>{props.index}. {book.title}</h3>
+            <p>Review: {book.review}</p>
+            <p>Count: {book.count}</p>
             <button className="button" onClick={deleteBook}>Delete</button>
+            <Link className="button" to={`/${props.id}`}>See more..</Link>
         </li>
     )
 }
