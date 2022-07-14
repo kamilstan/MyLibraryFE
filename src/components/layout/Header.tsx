@@ -11,7 +11,6 @@ export const Header = () => {
         e.preventDefault();
         await fetch("http://localhost:3001/user/logout", {
             method: "DELETE",
-            // credentials: "include",
         });
         navigate('/');
     }

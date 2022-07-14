@@ -1,4 +1,4 @@
-import React, {SyntheticEvent, useState, useContext} from 'react';
+import React, {SyntheticEvent, useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {LoginUserEntity} from "types";
 import {Button} from "../../common/Button/Button";
@@ -38,7 +38,6 @@ export const LoginUser = () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(form),
-                // credentials: "include",
             });
             const data = await res.json();
             console.log("token", data.accessToken)
@@ -61,7 +60,7 @@ export const LoginUser = () => {
     return (
         <main className="login-user">
 
-            <Link to="/admin"><Button text="Go back to main page"/></Link>
+            <Link to="/"><Button text="Go back to main page"/></Link>
             <h2>Login</h2>
 
             <form className="login-form" onSubmit={login}>

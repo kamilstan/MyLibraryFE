@@ -62,11 +62,10 @@ export const AddUserForm = () => {
         )
     }
 
-
     return (
         <main className="add-user">
 
-            <Link to="/admin"><Button text="Go back to main page"/></Link>
+            <Link to="/"><Button text="Go back to main page"/></Link>
             <h2>Register new user</h2>
 
             <form className="add-user-form" onSubmit={saveUser}>

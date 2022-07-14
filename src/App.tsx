@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
-
 import { SearchContext } from './contexts/search.context';
 import {Route, Routes} from "react-router-dom";
-
 import {BooksView} from "./views/BooksView";
 import {AdminView} from "./views/AdminView";
 import {AddBookView} from "./views/AddBookView";
