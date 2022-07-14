@@ -56,7 +56,7 @@ export const AddBookForm = () => {
             <main className="added-book">
                 <p className="book-added-p">The book "{form.title}" has been added by ID "{id}"</p>
                 <Link to="/" className="go-to-main">
-                    <Button text="Go back to main page"/>
+                    <Button text="Go back to book list"/>
                     </Link>
             </main>
         )

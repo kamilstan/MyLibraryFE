@@ -14,7 +14,8 @@ export const AddUserForm = () => {
         lastname: '',
         address: '',
         password: '',
-
+        email: '',
+        username: '',
     });
 
     const updateForm = (key: string, value: any) => {
@@ -30,7 +31,7 @@ export const AddUserForm = () => {
         setLoading(true);
 
         try {
-            const res = await fetch("http://localhost:3001/user", {
+            const res = await fetch("http://localhost:3001/user/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -55,7 +56,7 @@ export const AddUserForm = () => {
             <main className="added-user">
                 <p className="user-added-p">The user "{form.firstname} {form.lastname}" has been added by ID "{id}"</p>
                 <Link to="/admin" className="go-to-main">
-                    <Button text="Go back to main page"/>
+                    <Button text="Go back to user list"/>
                 </Link>
             </main>
         )
@@ -66,7 +67,7 @@ export const AddUserForm = () => {
         <main className="add-user">
 
             <Link to="/admin"><Button text="Go back to main page"/></Link>
-            <h2>Add new user</h2>
+            <h2>Register new user</h2>
 
             <form className="add-user-form" onSubmit={saveUser}>
                 <p>
@@ -97,6 +98,18 @@ export const AddUserForm = () => {
                 </p>
                 <p>
                     <label>
+                        Username: <br/>
+                        <textarea
+                            name="username"
+                            required
+                            maxLength={100}
+                            value={form.username}
+                            onChange={e => updateForm('username', e.target.value)}
+                        />
+                    </label>
+                </p>
+                <p>
+                    <label>
                         Address: <br/>
                         <textarea
                             name="address"
@@ -104,6 +117,18 @@ export const AddUserForm = () => {
                             maxLength={1000}
                             value={form.address}
                             onChange={e => updateForm('address', e.target.value)}
+                        />
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Email: <br/>
+                        <textarea
+                            name="email"
+                            required
+                            maxLength={100}
+                            value={form.email}
+                            onChange={e => updateForm('email', e.target.value)}
                         />
                     </label>
                 </p>

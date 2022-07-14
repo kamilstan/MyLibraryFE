@@ -24,9 +24,13 @@
     order: 1;
     display: block;
     margin: 10px;
-}
-
-.item a {
     text-decoration: none;
     color: white;
+}
+
+.logout-button {
+    border: none;
+    background-color: inherit;
+    font-size: 16px;
+    cursor: pointer;
 }

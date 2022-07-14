@@ -20,7 +20,7 @@ export const User = (props: Props) => {
             setUser(data);
 
         })()
-    }, [user])
+    }, [])
 
     const deleteUser = async (e:SyntheticEvent) => {
         e.preventDefault();

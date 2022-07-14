@@ -22,17 +22,19 @@ export const SingleUserView = () => {
         return null
     }
 
-    console.log(user)
+
     return (
         <div className="single-user-view">
-            <header className="single-item-header">
+            <header className="single-user-header">
                 <h1>User: {user.firstname} {user.lastname}</h1>
                 <Link className="button" to={`/admin`}>Go to user list</Link>
             </header>
 
-            <main className="single-item-main">
+            <main className="single-user-main">
                 <p>User ID: <b>{user.id}</b></p>
+                <p>Username: <b>{user.username}</b></p>
                 <p>Address: <b>{user.address}</b></p>
+                <p>Email: <b>{user.email}</b></p>
                 <p>Password: <b>{user.password}</b></p>
             </main>
 

@@ -1,20 +1,30 @@
-import React, {useContext} from "react";
+import React, {SyntheticEvent} from "react";
+import {Search} from "../Search/Search";
+import {Link, useNavigate} from "react-router-dom";
 
 import "./Header.css"
-import {Search} from "../Search/Search";
-import {SearchContext} from "../../contexts/search.context";
-import {Link} from "react-router-dom";
 
 export const Header = () => {
 
+    const navigate = useNavigate();
+    const logout = async (e:SyntheticEvent) => {
+        e.preventDefault();
+        await fetch("http://localhost:3001/user/logout", {
+            method: "DELETE",
+            // credentials: "include",
+        });
+        navigate('/');
+    }
     return (
 
         <header className="header">
             <nav className="nav">
                 <ul className="menu">
                     <Link to="/" className="logo" >My-Library</Link>
-                    <li className="item"><a href="#">Login</a></li>
-                    <li className="item"><a href="#">Register</a></li>
+                    {/*<Link to="/admin" className="item" >Admin</Link>*/}
+                    <Link to="/admin/register" className="item">Register</Link>
+                    <Link to="/admin/login" className="item">Login</Link>
+                    <button  className="item logout-button" onClick={logout}>Logout</button>
                 </ul>
             </nav>
             <Search/>

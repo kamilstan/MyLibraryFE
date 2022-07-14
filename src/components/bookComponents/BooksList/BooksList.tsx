@@ -24,6 +24,7 @@ export const BooksList = () => {
     return (
 
             <main className="books">
+                <h2>Books:</h2>
                 <ul className="booksList">
                     {
                         books.map((book, index) => (

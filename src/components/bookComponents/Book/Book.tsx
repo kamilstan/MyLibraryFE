@@ -20,7 +20,7 @@ export const Book =(props: Props)=> {
             setBook(data);
 
         })()
-    }, [book])
+    }, [])
 
     const deleteBook = async (e:SyntheticEvent) => {
         e.preventDefault();
@@ -43,7 +43,7 @@ export const Book =(props: Props)=> {
             <h3>{props.index}. {book.title}</h3>
             <p>Review: {book.review}</p>
             <p>Count: {book.count}</p>
-            <button className="button" onClick={deleteBook}>Delete</button>
+            {/*<button className="button" onClick={deleteBook}>Delete</button>*/}
             <Link className="button" to={`/${props.id}`}>See more..</Link>
         </li>
     )

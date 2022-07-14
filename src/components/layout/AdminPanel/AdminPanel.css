@@ -1,0 +1,15 @@
+.admin-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    color: white;
+    height: 10vh;
+    background-color: #36B5D9;
+    color: white;
+}
+
+.admin-panel p {
+    margin-right: 20px;
+    border-bottom: 1px solid white;
+}

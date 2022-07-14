@@ -1,24 +1,31 @@
 .single-user-view {
-    width: 100vw;
+    width: 40vw;
     height: 50vh;
     margin: 0 auto;
-
+    border-radius: 2px;
+    background-color: snow;
 }
 
-.single-item-header {
+.single-user-header {
     margin: 10px;
     padding: 10px;
     display: flex;
-    align-items: center;
-;
+    border-bottom: black solid 1px;
 }
 
-.single-item-main {
+.single-user-header h1 {
+    flex-grow: 1;
+}
+
+.single-user-main {
     display: flex;
     flex-direction: column;
-    /*height: 50vh;*/
     margin: 10px;
     padding: 10px;
     border-radius: 2px;
+}
 
+.single-user-main p {
+    margin: 5px;
+    padding: 5px;
 }

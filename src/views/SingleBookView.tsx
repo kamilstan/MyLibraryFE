@@ -24,12 +24,12 @@ export const SingleBookView = () => {
 
     return (
         <div className="single-book-view" >
-            <header className="single-item-header">
+            <header className="single-book-header">
                 <h1>Title: <b>{book.title}</b></h1>
                 <Link className="button" to={`/`}>Go to book list</Link>
             </header>
 
-            <main className="single-item-main">
+            <main className="single-book-main">
                 <p>Book ID: <b>{book.id}</b></p>
                 <p>Author: <b>{book.author}</b></p>
                 <p>Description: <b>{book.description}</b></p>
