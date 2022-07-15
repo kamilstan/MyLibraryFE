@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# MyLibrary App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a front-end part of my application made in React.js, Express.js, TypeScript and MongoDB.
+
+You can check how it looks like here: http://mylibrary.networkmanager.pl/
+
+## Introduction
+
+This project is a simple library system, where you can check the book list and information about every single book. You can also add new user or addd or delete a book when you are logged in. There is also possibility to register.
+
+This is my final project after completing the MegaK course.
+
+The project will be expanded with new functionalities in the future.
+
+## Technologies used in the project
+
+The project was written in React.js and TypeScript. I used pure CSS for styling.
 
 ## Available Scripts
 
@@ -19,9 +33,19 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `npm run build:win`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production for Windows users to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run build:unix`
+
+Builds the app for production for Linux users to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
@@ -39,8 +63,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
