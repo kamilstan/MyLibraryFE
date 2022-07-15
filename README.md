@@ -6,7 +6,7 @@ You can check how it looks like here: http://mylibrary.networkmanager.pl/
 
 ## Introduction
 
-This project is a simple library system, where you can check the book list and information about every single book. You can also add new user or addd or delete a book when you are logged in. There is also possibility to register.
+This project is a simple library system, where you can check the book list and information about every single book. You can also add new user or add or delete a book when you are logged in. There is also possibility to register.
 
 This is my final project after completing the MegaK course.
 
