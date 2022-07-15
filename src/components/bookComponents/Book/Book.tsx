@@ -3,6 +3,7 @@ import { BookEntity } from "types";
 import {Link} from "react-router-dom";
 
 import "./Book.css"
+import {apiUrl} from "../../../config/api";
 
 interface Props {
     id: string;
@@ -15,7 +16,7 @@ export const Book =(props: Props)=> {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/book/${props.id}`);
+            const res = await fetch(`${apiUrl}/book/${props.id}`);
             const data = await res.json();
             setBook(data);
 
@@ -29,7 +30,7 @@ export const Book =(props: Props)=> {
             return;
         };
 
-        await fetch(`http://localhost:3001/book/${props.id}`, {
+        await fetch(`${apiUrl}/book/${props.id}`, {
             method: "DELETE",
         });
     }

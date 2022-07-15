@@ -3,6 +3,7 @@ import { UserEntity } from "types";
 import {Link, useParams} from "react-router-dom";
 
 import "./User.css"
+import {apiUrl} from "../../../config/api";
 
 interface Props {
     id: string;
@@ -15,7 +16,7 @@ export const User = (props: Props) => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/user/${props.id}`);
+            const res = await fetch(`${apiUrl}/user/${props.id}`);
             const data = await res.json();
             setUser(data);
 
@@ -27,7 +28,7 @@ export const User = (props: Props) => {
         if(!window.confirm(`Are you sure you want to remove the user with ID: ${props.id}?`)) {
             return;
         };
-        await fetch(`http://localhost:3001/user/${props.id}`, {
+        await fetch(`${apiUrl}/user/${props.id}`, {
             method: "DELETE",
         });
     }

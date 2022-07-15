@@ -3,6 +3,7 @@ import {BookEntity} from "types"
 import {Link, useParams} from "react-router-dom";
 
 import "./SingleBookView.css"
+import {apiUrl} from "../config/api";
 
 export const SingleBookView = () => {
 
@@ -12,7 +13,7 @@ export const SingleBookView = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/book/${bookId}`);
+            const res = await fetch(`${apiUrl}/book/${bookId}`);
             const data = await res.json();
             setBook(data);
         })();

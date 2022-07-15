@@ -4,6 +4,7 @@ import {BookEntity} from "types"
 import {Book} from "../Book/Book";
 
 import "./BooksList.css"
+import {apiUrl} from "../../../config/api";
 
 
 export const BooksList = () => {
@@ -14,7 +15,7 @@ export const BooksList = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/book/search/${search}`)
+            const res = await fetch(`${apiUrl}/book/search/${search}`)
             const data = await res.json();
             setBooks(data);
         })();

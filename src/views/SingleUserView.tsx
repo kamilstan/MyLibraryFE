@@ -3,6 +3,7 @@ import {Link, useParams} from "react-router-dom";
 import {UserEntity} from "types";
 
 import "./SingleUserView.css";
+import {apiUrl} from "../config/api";
 
 export const SingleUserView = () => {
 
@@ -12,7 +13,7 @@ export const SingleUserView = () => {
 
     useEffect(() => {
         (async () => {
-                const res = await fetch(`http://localhost:3001/user/${userId}`);
+                const res = await fetch(`${apiUrl}/user/${userId}`);
                 const data = await res.json();
                 setUser(data);
             })();

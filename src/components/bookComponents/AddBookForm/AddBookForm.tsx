@@ -5,6 +5,7 @@ import {Button} from "../../common/Button/Button";
 import {Link} from "react-router-dom";
 import { NewBookEntity } from "types";
 import {Spinner} from "../../common/Spinner/Spinner";
+import {apiUrl} from "../../../config/api";
 
 export const AddBookForm = () => {
 
@@ -31,7 +32,7 @@ export const AddBookForm = () => {
         setLoading(true);
 
         try {
-            const res = await fetch("http://localhost:3001/book", {
+            const res = await fetch(`${apiUrl}/book`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

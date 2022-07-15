@@ -4,6 +4,7 @@ import {UserEntity} from "types";
 import {User} from "../User/User"
 
 import "./UserList.css"
+import {apiUrl} from "../../../config/api";
 
 export const UserList = () => {
 
@@ -12,7 +13,7 @@ export const UserList = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/user/search/${search}`)
+            const res = await fetch(`${apiUrl}/user/search/${search}`)
             const data = await res.json();
             setUsers(data);
         })();

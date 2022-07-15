@@ -6,6 +6,7 @@ import {Spinner} from "../../common/Spinner/Spinner";
 
 
 import "./LoginUser.css"
+import {apiUrl} from "../../../config/api";
 
 
 export const LoginUser = () => {
@@ -32,7 +33,7 @@ export const LoginUser = () => {
 
         try {
 
-            const res = await fetch("http://localhost:3001/user/login", {
+            const res = await fetch(`${apiUrl}/user/login`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",

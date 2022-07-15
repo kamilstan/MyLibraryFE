@@ -5,6 +5,7 @@ import {Button} from "../../common/Button/Button";
 import {Spinner} from "../../common/Spinner/Spinner";
 
 import "./AddUserForm.css"
+import {apiUrl} from "../../../config/api";
 
 export const AddUserForm = () => {
     const [loading, setLoading] = useState(false);
@@ -31,7 +32,7 @@ export const AddUserForm = () => {
         setLoading(true);
 
         try {
-            const res = await fetch("http://localhost:3001/user/register", {
+            const res = await fetch(`${apiUrl}/user/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

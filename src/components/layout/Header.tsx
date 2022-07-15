@@ -3,13 +3,14 @@ import {Search} from "../Search/Search";
 import {Link, useNavigate} from "react-router-dom";
 
 import "./Header.css"
+import {apiUrl} from "../../config/api";
 
 export const Header = () => {
 
     const navigate = useNavigate();
     const logout = async (e:SyntheticEvent) => {
         e.preventDefault();
-        await fetch("http://localhost:3001/user/logout", {
+        await fetch(`${apiUrl}/user/logout`, {
             method: "DELETE",
         });
         navigate('/');
