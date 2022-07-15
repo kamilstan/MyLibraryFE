@@ -1,0 +1,13 @@
+.books {
+    min-height: 85vh;
+    background-color: seagreen;
+    padding: 30px;
+}
+
+.booksList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+;
+}
+

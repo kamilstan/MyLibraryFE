@@ -1,18 +1,36 @@
-import React from "react";
+import React, {SyntheticEvent} from "react";
+import {Search} from "../Search/Search";
+import {Link, useNavigate} from "react-router-dom";
 
 import "./Header.css"
-import {Search} from "../Search/Search";
+import {apiUrl} from "../../config/api";
 
-export const Header = () => (
-    <header className="header">
-        <nav className="nav">
-            <ul className="menu">
-                <li className="logo">My-Library</li>
-                <li className="item"><a href="#">Login</a></li>
-                <li className="item"><a href="#">Register</a></li>
-            </ul>
-        </nav>
-        <Search/>
+export const Header = () => {
 
-    </header>
-)
+    const navigate = useNavigate();
+    const logout = async (e:SyntheticEvent) => {
+        e.preventDefault();
+        await fetch(`${apiUrl}/user/logout`, {
+            method: "DELETE",
+        });
+        navigate('/');
+    }
+    return (
+
+        <header className="header">
+            <nav className="nav">
+                <ul className="menu">
+                    <Link to="/" className="logo" >My-Library</Link>
+                    {/*<Link to="/admin" className="item" >Admin</Link>*/}
+                    <Link to="/admin/register" className="item">Register</Link>
+                    <Link to="/admin/login" className="item">Login</Link>
+                    <button  className="item logout-button" onClick={logout}>Logout</button>
+                </ul>
+            </nav>
+            <Search/>
+
+        </header>
+    )
+}
+
+

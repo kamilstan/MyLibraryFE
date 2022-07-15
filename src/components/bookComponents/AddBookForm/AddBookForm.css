@@ -1,0 +1,63 @@
+.add-book {
+    min-height: 100vh;
+    background-color: seagreen;
+    padding: 10px 0;
+}
+
+.added-book {
+    min-height: 100vh;
+    background-color: seagreen;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.go-to-main {
+    text-decoration: none;
+    color: white;
+
+}
+
+.book-added-p {
+    background-color: snow;
+    padding: 10px;
+    width: 40vw;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    margin: 10px auto;
+    padding: 20px 10px;
+    background-color: white;
+    background-color: snow;
+}
+
+h2 {
+    width: 20vw;
+    text-align: center;
+    margin: 0 auto;
+    padding: 2vh 0;
+    color: white;
+}
+
+.add-book-form p {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.add-book-form input, .add-book-form textarea  {
+    margin: 5px 0;
+    padding: 10px;
+    width: 40vw;
+}
+
+.add-book-form button {
+    margin: 5px 0;
+    padding: 10px;
+    width: 40vw;
+
+}

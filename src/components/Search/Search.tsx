@@ -1,14 +1,25 @@
-import React from "react";
-import {Button} from "../common/Button";
+import React, {SyntheticEvent, useContext, useState} from "react";
+import {Button} from "../common/Button/Button";
+import {SearchContext} from "../../contexts/search.context";
 
 import "./Search.css"
 
+
 export const Search = () => {
 
+    const {search, setSearch} = useContext(SearchContext)
+    const [inputValue, setInputValue] = useState(search)
+
+    const setSearchingResult = (e:SyntheticEvent) => {
+        e.preventDefault();
+        setSearch(inputValue);
+    }
+
     return(
-        <div className="search">
-            <input placeholder="Search for books.." type="text"/>
+        <form className="search" onSubmit={setSearchingResult} >
+            <input placeholder="Start searching..." value={inputValue} onChange={e => setInputValue(e.target.value)} type="text"/>
             <Button text="Find"/>
-        </div>
+
+        </form>
     )
 }

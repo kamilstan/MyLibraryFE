@@ -14,20 +14,23 @@
 .logo {
     order: 0;
     flex-grow: 1;
-    list-style: none;
     font-weight: bold;
     margin: 10px;
+    text-decoration: none;
+    color: white;
 
 }
 .item {
     order: 1;
-    position: relative;
     display: block;
-    width: auto;
     margin: 10px;
-}
-
-.item a {
     text-decoration: none;
     color: white;
+}
+
+.logout-button {
+    border: none;
+    background-color: inherit;
+    font-size: 16px;
+    cursor: pointer;
 }

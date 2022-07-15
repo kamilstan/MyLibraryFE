@@ -1,0 +1,33 @@
+.single-book-view {
+    width: 40vw;
+    height: 50vh;
+    margin: 0 auto;
+    border-radius: 2px;
+    background-color: snow;
+
+}
+
+.single-book-header {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    border-bottom: black solid 1px;
+}
+
+.single-book-header h1 {
+    flex-grow: 1;
+}
+
+.single-book-main {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.single-book-main p {
+    margin: 5px;
+    padding: 5px;
+}

@@ -1,0 +1,14 @@
+.single-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 40vw;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.single-user-name {
+    flex-grow: 1;
+}

@@ -1,0 +1,14 @@
+.users {
+    min-height: 85vh;
+    background-color: seagreen;
+    padding: 30px;
+}
+
+.usersList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+
