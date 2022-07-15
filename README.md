@@ -1,6 +1,6 @@
 # MyLibrary App
 
-This project is a front-end part of my application made in React.js, Express.js, TypeScript and MongoDB.
+This project is a front-end part of my application made in React.js, Express.js, TypeScript and MySQL.
 
 You can check how it looks like here: http://mylibrary.networkmanager.pl/
 
